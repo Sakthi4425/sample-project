@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Sample Project</title>
+        <link rel="icon" href="emc.png">
+        <link rel="text/javascript" href="script.js">
+
+    </head>
+    <body>
+        <h1 align="center">Sakthi Restaurant</h1>
+        <hr>
+        <center>
+            <form>
+                <table border="1">
+                    <tr>
+                        <th align="center" colspan="2">Items Menu</th>
+                    </tr>
+                    <tr>
+                        <td>Major Dishes :</td>
+                        <td>
+                            <select id="major" size="3" multiple="multiple">
+                                <option>Vegetable Pulav</option>
+                                <option>Hyderabad Biriyani</option>
+                                <option>Roti with curry</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Starters</td>
+                        <td>
+                            <select id="starters" size="3" multiple="multiple">
+                                <option>Gobi Manchuriyan</option>
+                                <option>Veg Soup</option>
+                                <option>Masala Papad</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Soft Drinks</td>
+                        <td>
+                            <select>
+                                <option>Pepsi</option>
+                                <option>Coke</option>
+                                <option>LimeSoda</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center>
+                            <textarea id="ordereditems" rows=10 cols=40>
+                            </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td> <input type=button value="Find Total Cost" onClick="findCost()"/></td>
+                         <td> <input type=reset value=clear /></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </body>
+</html>
