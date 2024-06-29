@@ -1,37 +1,47 @@
-function findCost()
+<script type="text/javascript">
+function calc()
  {
-   var major=document.getElementById("major");
-   var starters = document.getElementById("starters");
-   var soft = document.getElementById("soft");
-   var selectedItems="Item\t\t\t Price \n. \n";
-   var totcost=0;
-   for(var i=0;i<major.options.length; i++)
-    {
-     var option = major.options[i];
-     if(option.selected==true)
-       {
-         var price = parseInt(option.value);
-         totcost=totcost + price;
-         selectedItems=selectedItems+option.text+"\t\t"+price+"\n";
-        }
-    }
- for(var i=0; i<starters.options.length;i++)
+   var m1,m2,m3,m4,avg=0,total=0,result="",grade="";
+   m1=parseInt(document.form1.s1.value);
+   m2=parseInt(document.form1.s2.value);
+   m3=parseInt(document.form1.s3.value);
+   m4=parseInt(document.form1.s4.value);
+   m5=parseInt(document.form1.s5.value);
+   total=m1+m2+m3+m4+m5;
+   avg=total/5;
+  if( m1 < 35 || m2 < 35 || m3 <35 || m4 <35 || m5 <35)
    {
-     var option = starters.options[i];
-     if(option.selected==true)
-       {
-          var price = parseInt(option.value);
-          totcost=totcost + price;
-          selectedItems=selectedItems+option.text+"\t\t"+price+"\n";
-        }
+     result="fail";
+     grade="D"; 
     }
-   var softdrinkIndex=soft.selectedIndex;if(softdrinkIndex!=-1)
-    {
-      var selectedSoftdrink=soft.options[soft.selectedIndex].text; 
-      var price = parseInt(soft.options[soft.selectedIndex].value); 
-      totcost=totcost+price;
-      selectedItems=selectedItems+selectedSoftdrink+"\t\t\t"+price+"\n. \n";
+  else if(avg >= 75)
+   {
+     result="distinction";
+     grade="A+";
     }
-  selectedItems=selectedItems+"Total cost \t\t" + totcost+"\n. \n";
-  document.getElementById("ordereditems").value=selectedItems;
- }
+  else if(avg >= 60&&avg < 75)
+   {
+      result="first class";
+      grade="A";
+    }
+  else if(avg >= 50&&avg < 60)
+   {
+     result="second class";
+     grade="B";
+    }
+  else if(avg >= 35&&avg < 50)
+   {
+     result="pass class";
+     grade="C";
+    }
+  else if(avg < 35)
+   {
+     result="fail";
+     grade="D"; 
+    }
+  document.form1.result.value=result;
+  document.form1.grade.value=grade;
+  document.form1.total.value=total;
+  document.form1.average.value=avg;
+}
+</script>
